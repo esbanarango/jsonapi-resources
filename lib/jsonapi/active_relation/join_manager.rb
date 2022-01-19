@@ -90,6 +90,8 @@ module JSONAPI
       end
 
       def self.alias_from_arel_node(node)
+        return nil if node.nil?
+
         case node.left
         when Arel::Table
           node.left.name
